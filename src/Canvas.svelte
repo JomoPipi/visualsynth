@@ -1,10 +1,20 @@
 <script lang="ts">
-    
+    import { onMount } from 'svelte'
+
+    export let bg : string
+    export let applicants : ((canvas : HTMLCanvasElement) => void)[]
+        = []
+
+    let canvas : HTMLCanvasElement
+
+    onMount(() => {
+        canvas.style.backgroundColor = bg
+        applicants.forEach(f => f(canvas))
+        console.log('yoooo')
+    })
 </script>
 
-
-<canvas/>
-
+<canvas bind:this={canvas}/>
 
 <style>
     canvas {

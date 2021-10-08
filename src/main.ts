@@ -1,5 +1,5 @@
 import App from './App.svelte';
-
+type X = number
 const app = new App({
 	target: document.body,
 	props: {

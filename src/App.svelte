@@ -1,10 +1,11 @@
 <script lang="ts">
 	export let name : string
 
-	import Editor from './Editor.svelte'
+	import Editor from './Editor/Editor.svelte'
 	import Viewer from './Viewer.svelte'
 
 	console.log('name = ',name)
+	console.log('sdfsdfjsdfj')
 
 	type Tab = 'edit' | 'view'
 	let tab : Tab = 'edit' 
@@ -17,14 +18,18 @@
 
 <main>
 	<div class="top-row">
+		<span></span>
 		<h1>VisualSynth</h1>
-		edit
-		<input type="radio" name="view" value="edit" checked on:input={switchTab}>
-		view
-		<input type="radio" name="view" value="view" on:input={switchTab}>
+		<span>
+			edit
+			<input type="radio" name="view" value="edit" checked on:input={switchTab}>
+			view
+			<input type="radio" name="view" value="view" on:input={switchTab}>
+		</span>
 	</div>
 
-	<div>
+	<div class="tabs">
+		<!-- hello -->
 		{#if tab === 'edit'}
 			<Editor/>
 		{:else if tab === 'view'}
@@ -60,5 +65,10 @@
 		main {
 			max-width: none;
 		}
+	}
+
+	input[type=radio] {
+		width: 40px;
+		height: 40px;
 	}
 </style>

@@ -2,7 +2,7 @@
     import Canvas from "./Canvas.svelte";
 </script>
 
-<Canvas/>
+<Canvas bg="black"/>
 Viewer
 
 <style>
